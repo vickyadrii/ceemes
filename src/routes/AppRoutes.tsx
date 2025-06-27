@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router";
-import { HomePage, LoginPage } from "@/pages";
+import { HomePage, LoginPage, MenuGroupPage, MenuPage } from "@/pages";
 import { AppLayout, AuthLayout } from "@/layouts";
 
 const AppRoutes = () => {
@@ -7,6 +7,10 @@ const AppRoutes = () => {
     <Routes>
       <Route element={<AppLayout />}>
         <Route index element={<HomePage />} />
+        <Route path="settings">
+          <Route path="menu-groups" element={<MenuGroupPage />} />
+          <Route path="menus" element={<MenuPage />} />
+        </Route>
       </Route>
 
       <Route element={<AuthLayout />}>
