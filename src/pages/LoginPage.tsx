@@ -1,9 +1,7 @@
+import Login from "@/features/login/Login";
+
 const LoginPage = () => {
-  return (
-    <div>
-      <p>LoginPage</p>
-    </div>
-  );
+  return <Login />;
 };
 
 export default LoginPage;

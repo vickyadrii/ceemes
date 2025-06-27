@@ -2,6 +2,7 @@ import { sidebarItems } from "@/constants";
 import SidebarItem from "./SidebarItem";
 import { useState } from "react";
 import type { SidebarItemType } from "@/types";
+import Logo from "@/components/common/logo";
 
 const Sidebar = () => {
   const [showChildren, setShowChildren] = useState<boolean>(false);
@@ -13,10 +14,7 @@ const Sidebar = () => {
   return (
     <div className="fixed bg-white w-64 h-full">
       <div className="">
-        <div className="p-4 flex items-center gap-2 border-b border-b-gray-100">
-          <img src="/assets/images/logo.webp" alt="Ceemes Logo" className="w-10 h-10 object-cover" />
-          <h3 className="text-purple-500 text-2xl font-bold">Ceemes</h3>
-        </div>
+        <Logo />
 
         {sidebarItems.map((item) => (
           <div key={item.title}>

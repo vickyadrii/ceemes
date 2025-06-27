@@ -1,5 +1,7 @@
 import type { SidebarItemType } from "@/types";
 
+export const TOKEN: string = 'ceemes_token';;
+
 export const sidebarItems: SidebarItemType[] = [
   {
     title: "Dashboard",
