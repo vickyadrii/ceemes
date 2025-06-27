@@ -1,8 +1,9 @@
+import HomeCard from "./components/HomeCard"
 
 const Home = () => {
   return (
     <div>
-      <h1 className="text-purple-600">Home Page</h1>
+      <HomeCard />
     </div>
   )
 }
