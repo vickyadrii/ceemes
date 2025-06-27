@@ -5,10 +5,10 @@ import type { SidebarItemType } from "@/types";
 import Logo from "@/components/common/logo";
 
 const Sidebar = () => {
-  const [showChildren, setShowChildren] = useState<boolean>(false);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const handleShowChildren = () => {
-    setShowChildren(!showChildren);
+  const handleShowChildren = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
@@ -16,20 +16,20 @@ const Sidebar = () => {
       <div className="">
         <Logo />
 
-        {sidebarItems.map((item) => (
+        {sidebarItems.map((item, index) => (
           <div key={item.title}>
             <SidebarItem
               title={item.title}
               href={item.href}
               icon={item.icon}
               children={item.children}
-              onShowChildren={handleShowChildren}
-              showChildren={showChildren}
+              onShowChildren={() => handleShowChildren(index)}
+              showChildren={openIndex === index}
             />
 
             {item.children && (
               <div
-                className={`${showChildren ? "h-40 opacity-100" : "h-0 max-h-0 opacity-0"} mx-4 transition-all duration-200 ease-out`}
+                className={`${openIndex === index ? "h-40 opacity-100" : "h-0 max-h-0 opacity-0"} mx-4 transition-all duration-200 ease-out overflow-hidden`}
               >
                 {item.children.map((child: SidebarItemType) => (
                   <SidebarItem key={child.title} title={child.title} href={child.href} icon={child.icon} />
