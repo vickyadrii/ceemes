@@ -11,14 +11,14 @@ type Props = {
 };
 
 const SidebarItem = ({ title, href, icon, children, onShowChildren, showChildren }: Props) => {
-  return children ? (
+  return children && children?.length > 0 ? (
     <button
       type="button"
       className="w-full p-4 flex items-center justify-between hover:bg-gray-100 cursor-pointer transition-all duration-200 ease-out"
       onClick={onShowChildren}
     >
       <div className="flex items-center gap-2">
-        {icon && <img src={icon} alt={`${title} icon`} />}
+        {<img src={icon ?? '/assets/icons/ic_dynamic.svg'} alt={`${title} icon`} />}
         <span className="text-sm font-medium">{title}</span>
       </div>
       <img
@@ -37,7 +37,7 @@ const SidebarItem = ({ title, href, icon, children, onShowChildren, showChildren
         ].join(" ")
       }
     >
-      {icon && <img src={icon} alt={`${title} icon`} />}
+      {(!!icon && !children) || (!icon && children?.length === 0) ? <img src={icon ?? '/assets/icons/ic_dynamic.svg'} alt={`${title} icon`} /> : null}
       <span className="text-sm font-medium">{title}</span>
     </NavLink>
   );

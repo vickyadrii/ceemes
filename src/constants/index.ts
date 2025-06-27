@@ -1,6 +1,7 @@
 import type { SidebarItemType } from "@/types";
 
-export const TOKEN: string = 'ceemes_token';;
+export const TOKEN: string = 'ceemes_token';
+export const MENU_GROUPS_KEY: string = "ceemes-menu-groups";
 
 export const sidebarItems: SidebarItemType[] = [
   {

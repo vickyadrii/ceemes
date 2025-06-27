@@ -1,9 +1,7 @@
+import Menu from "@/features/settings/menu/Menu";
+
 const MenuPage = () => {
-  return (
-    <div>
-      <p>MenuPage</p>
-    </div>
-  );
+  return <Menu />;
 };
 
 export default MenuPage;
