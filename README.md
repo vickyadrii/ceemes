@@ -73,3 +73,17 @@ Here is the project structure folder.
 
 ## Preview
 
+Page Name | Preview |
+------------- | -------------
+Login  | <img width="1680" alt="Screenshot 2025-06-28 at 00 05 56" src="https://github.com/user-attachments/assets/f9d66de3-9b00-43e1-8af9-a3265e8c8dd7" /> |
+Dashboard | <img width="1680" alt="Screenshot 2025-06-28 at 00 10 41" src="https://github.com/user-attachments/assets/96ccbaa7-7f0c-4a17-a491-47968610e091" /> |
+Menu Group Management | <img width="1680" alt="Screenshot 2025-06-28 at 00 11 52" src="https://github.com/user-attachments/assets/12ceecbe-2c46-44e3-b837-03bb167eda5f" /> |
+Menu Management | <img width="1680" alt="Screenshot 2025-06-28 at 00 11 59" src="https://github.com/user-attachments/assets/ccdeaee0-520c-41d9-b13f-3a8f27aee70c" /> |
+
+
+
+
+
+
+
+
