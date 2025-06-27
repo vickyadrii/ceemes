@@ -1,14 +1,8 @@
-import { useEffect, useState } from "react";
+import { useAppSelector } from "@/store/hooks";
 
 const HomeCard = () => {
-  const [username, setUsername] = useState<string>("");
+  const username = useAppSelector((state) => state.user.username);
 
-  useEffect(() => {
-    const storedUsername = localStorage.getItem("user-data");
-    if (storedUsername) {
-      setUsername(storedUsername);
-    }
-  }, []);
   return (
     <div className="p-6 bg-gradient-to-r from-purple-500 to-purple-700 rounded-lg shadow-lg text-white">
       <div className="flex flex-col items-start gap-3">

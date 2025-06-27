@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { removeAccessToken } from "@/lib/authStorage";
 import { useNavigate } from "react-router";
 import { toast } from "sonner";
 import Logout from "./Logout";
+import { useAppSelector } from "@/store/hooks";
+import { useDispatch } from "react-redux";
+import { logoutUser } from "@/store/userSlice";
 
 type Props = {
   onToggleSidebar: () => void;
@@ -11,22 +13,16 @@ type Props = {
 
 const Header = ({ onToggleSidebar }: Props) => {
   const navigate = useNavigate();
-  const [username, setUsername] = useState<string>("");
+  const dispatch = useDispatch();
+  const username = useAppSelector((state) => state.user.username);
 
   const handleLogout = () => {
     localStorage.removeItem("user-data");
     removeAccessToken();
-    setUsername("");
+    dispatch(logoutUser());
     toast.success("Logged out successfully!");
     navigate("/login");
   };
-
-  useEffect(() => {
-    const storedUsername = localStorage.getItem("user-data");
-    if (storedUsername) {
-      setUsername(storedUsername);
-    }
-  }, []);
 
   return (
     <div className="fixed w-full top-0 left-0 z-20 bg-white border-b">

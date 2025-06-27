@@ -9,6 +9,8 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { setAccesstoken } from "@/lib/authStorage";
 import { v4 as uuidv4 } from "uuid";
+import { useDispatch } from "react-redux";
+import { setUser } from "@/store/userSlice";
 
 const FormSchema = z.object({
   username: z.string().min(2, {
@@ -21,6 +23,7 @@ const FormSchema = z.object({
 
 const LoginForm = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
@@ -31,6 +34,7 @@ const LoginForm = () => {
   });
 
   const onSubmit = (data: z.infer<typeof FormSchema>) => {
+    dispatch(setUser({ username: data.username }));
     localStorage.setItem("user-data", data.username);
     const token = uuidv4();
     setAccesstoken(token);

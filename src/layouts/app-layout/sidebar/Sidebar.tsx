@@ -47,8 +47,8 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
                   <div
                     className={`${openIndex === index ? "h-auto opacity-100" : "h-0 max-h-0 opacity-0"} mx-4 mt-1 space-y-1 transition-all duration-200 ease-out overflow-hidden`}
                   >
-                    {item.children.map((child: SidebarItemType) => (
-                      <SidebarItem key={child.title} {...child} />
+                    {item.children.map((child: SidebarItemType, index) => (
+                      <SidebarItem key={index} {...child} />
                     ))}
                   </div>
                 )}
