@@ -2,7 +2,7 @@ import { sidebarItems } from "@/constants";
 import SidebarItem from "./SidebarItem";
 import { useState } from "react";
 import type { SidebarItemType } from "@/types";
-import Logo from "@/components/common/logo";
+import Logo from "@/components/common/Logo";
 
 const Sidebar = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);

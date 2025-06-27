@@ -1,9 +1,7 @@
+import MenuGroup from "@/features/settings/menu-group/MenuGroup";
+
 const MenuGroupPage = () => {
-  return (
-    <div>
-      <p>MenuGroupPage</p>
-    </div>
-  );
+  return <MenuGroup />;
 };
 
 export default MenuGroupPage;

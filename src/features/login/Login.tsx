@@ -1,4 +1,4 @@
-import Logo from "@/components/common/logo";
+import Logo from "@/components/common/Logo";
 import LoginForm from "./components/LoginForm";
 
 const Login = () => {
