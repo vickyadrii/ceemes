@@ -24,7 +24,7 @@ const SidebarItem = ({ title, href, icon, children, onShowChildren, showChildren
       <img
         src="/assets/icons/ic_arrow-top.svg"
         alt="ic_arrow-top"
-        className={`${showChildren ? "rotate-180" : "rotate-0"} transition-all duration-200 ease-out`}
+        className={`${showChildren ? "rotate-0" : "rotate-180"} transition-all duration-200 ease-out`}
       />
     </button>
   ) : (

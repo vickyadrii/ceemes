@@ -12,11 +12,11 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="fixed bg-white w-64 h-full">
+    <div className="fixed bg-white w-64 h-full z-10">
       <div className="">
         <Logo />
 
-        <div className="space-y-1 mt-4">
+        <div className="space-y-1">
           {sidebarItems.map((item, index) => (
             <div key={item.title}>
               <SidebarItem
